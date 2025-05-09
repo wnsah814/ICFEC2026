@@ -21,7 +21,7 @@ const Venue = () => {
             <div className="p-5 bg-white">
               <h3 className="text-xl font-semibold mb-3">About Tromsø</h3>
               <p className="text-gray-700 leading-relaxed">
-                Tromsø is a city in northern Norway, located 350 kilometers north of the Arctic Circle. Despite its remote location, Tromsø is a vibrant city with rich culture, a bustling nightlife, and stunning natural surroundings. It's known as the "Gateway to the Arctic" and is a popular base for northern lights hunting, midnight sun viewing, and Arctic adventures.
+                Tromsø is a city in northern Norway, located 350 kilometers north of the Arctic Circle. Despite its remote location, Tromsø is a vibrant city with rich culture, a bustling nightlife, and stunning natural surroundings. It&apos;s known as the &quot;Gateway to the Arctic&quot; and is a popular base for northern lights hunting, midnight sun viewing, and Arctic adventures.
               </p>
             </div>
           </div>
@@ -85,7 +85,7 @@ const Venue = () => {
             <div>
               <h4 className="font-medium mb-2">By Air</h4>
               <p className="text-gray-700 leading-relaxed">
-                Tromsø Airport (TOS) is well-connected with several daily flights from Oslo (approximately 2 hours flight time). There are also direct international flights from several European cities. From the airport, it's a 10-minute taxi or bus ride to the city center.
+                Tromsø Airport (TOS) is well-connected with several daily flights from Oslo (approximately 2 hours flight time). There are also direct international flights from several European cities. From the airport, it&apos;s a 10-minute taxi or bus ride to the city center.
               </p>
             </div>
             

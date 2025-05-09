@@ -53,7 +53,7 @@ const About = () => {
             resources located at the edge of the network and along the continuum between the cloud and the edge. These edge resources may be 
             geographically or in the network topology be closer to devices and sensors, such as home router, gateways or more substantial micro data 
             centres. Edge resources may be used to offload selected services from the cloud to accelerate an application or host edge-native 
-            applications. The paradigm within which the edge is harnessed is referred to as 'Fog/Edge computing'.
+            applications. The paradigm within which the edge is harnessed is referred to as &apos;Fog/Edge computing&apos;.
           </p>
           <p className="text-gray-700 leading-relaxed">
             The Fog/Edge computing paradigm is expected to improve the agility of service deployments, make use of opportunistic and cheap 

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const Sponsors = () => {
   return (
     <div className="container mx-auto px-4">
@@ -12,9 +14,11 @@ const Sponsors = () => {
           <div className="bg-white rounded-lg shadow-sm p-8 flex items-center justify-center">
             <div className="h-32 flex items-center">
               {/* IEEE logo */}
-              <img 
+              <Image 
                 src="/images/ieee-logo.png" 
                 alt="IEEE logo" 
+                width={200}
+                height={100}
                 className="max-h-full max-w-full object-contain"
               />
             </div>
@@ -23,9 +27,11 @@ const Sponsors = () => {
           <div className="bg-white rounded-lg shadow-sm p-8 flex items-center justify-center">
             <div className="h-32 flex items-center">
               {/* IEEE Computer Society logo */}
-              <img 
+              <Image 
                 src="/images/ieee-cs-logo.png" 
                 alt="IEEE Computer Society logo" 
+                width={200}
+                height={100}
                 className="max-h-full max-w-full object-contain"
               />
             </div>

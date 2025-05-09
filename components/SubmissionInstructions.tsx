@@ -19,7 +19,7 @@ const SubmissionInstructions = () => {
         <p className="text-gray-700 leading-relaxed">
           Papers may be submitted online at <a href="https://easychair.org" className="text-blue-600 hover:text-blue-800 transition-colors">EasyChair</a>. 
           Papers that are accepted for publication may be accepted as REGULAR papers (8 pages), SHORT papers (5 pages) or 
-          POSTER papers (2 pages), depending on the reviewers' recommendations. Accepted regular, short, and poster papers 
+          POSTER papers (2 pages), depending on the reviewers&apos; recommendations. Accepted regular, short, and poster papers 
           will be included in the conference proceedings that will be published through the IEEE Computer Society Conference Publishing Services.
         </p>
         

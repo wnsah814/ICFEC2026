@@ -23,9 +23,9 @@ const KeynotePapers = () => {
               <h5 className="font-semibold text-lg mb-2">Title: 5G Architecture and Emergence of the Edge</h5>
               
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Among the many areas of impact 5G will have is the nature of "edge". As recently as ten years ago, with LTE and prior wireless
+                Among the many areas of impact 5G will have is the nature of &quot;edge&quot;. As recently as ten years ago, with LTE and prior wireless
                 generations, it was common to build networks with highly centralized service nodes. With LTE, we expect the traditional network
-                morphology to flip on its heels with the emergence of a top-heavy "edge". In this presentation, we discuss the interpretation and causes of
+                morphology to flip on its heels with the emergence of a top-heavy &quot;edge&quot;. In this presentation, we discuss the interpretation and causes of
                 this inversion and highlight some of the most immediate consequences.
               </p>
               
