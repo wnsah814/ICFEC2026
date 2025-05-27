@@ -26,14 +26,14 @@ const SubmissionInstructions = () => {
         <div className="bg-blue-50 p-5 my-8 rounded-lg border border-blue-100">
           <h3 className="text-xl font-semibold mb-4 text-blue-800">Important Dates</h3>
           <ul className="space-y-3 list-disc pl-5">
-            <li><span className="font-medium">January 23, 2026:</span> Paper submission deadline (Fixed!)</li>
-            <li><span className="font-medium">February 28, 2026:</span> Author notification</li>
-            <li><span className="font-medium">March 28, 2026:</span> Camera-ready submission</li>
-            <li><span className="font-medium">May 19-22, 2026:</span> Conference (on-site in Tromsø, Norway)</li>
+            <li><span className="font-medium">December 1, 2025:</span> Deadline paper abstract</li>
+            <li><span className="font-medium">December 15, 2025:</span> Deadline paper</li>
+            <li><span className="font-medium">February 10, 2026:</span> Author notification</li>
+            <li><span className="font-medium">March 15, 2026:</span> Camera ready</li>
           </ul>
         </div>
         
-        <div className="bg-yellow-50 p-5 my-8 rounded-lg border border-yellow-100">
+        {/* <div className="bg-yellow-50 p-5 my-8 rounded-lg border border-yellow-100">
           <h3 className="text-xl font-semibold mb-4 text-yellow-800">Submission Format</h3>
           <p className="text-gray-700">
             All submissions must use the IEEE conference proceedings templates. The templates are available in 
@@ -52,7 +52,7 @@ const SubmissionInstructions = () => {
             <li><span className="font-medium">Short Paper:</span> Up to 5 pages</li>
             <li><span className="font-medium">Poster Paper:</span> Up to 2 pages</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

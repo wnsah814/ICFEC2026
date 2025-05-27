@@ -7,7 +7,7 @@ const Registration = () => {
         <div className="text-center mb-10">
           <a 
             href="https://site.uit.no/ccgrid2025/registration/" target="_blank"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-red-600 font-medium py-3 px-8 rounded-lg transition-colors shadow-md hover:shadow-lg"
           >
             CLICK HERE TO REGISTER NOW!
           </a>
@@ -24,37 +24,37 @@ const Registration = () => {
             <h3 className="text-xl font-semibold">Registration Policy</h3>
           </div>
           
-          <div className="p-6 space-y-4">
+          <div className="p-6 space-y-4 text-red-600">
             <ul className="space-y-4 list-disc pl-5">
               <li>
-                <strong>Author registration deadline is March 20, 2026.</strong> Non-author early registration deadline is April 14, 2026.
+                Author registration deadline is <strong>March 20, 2026</strong>. Non-author early registration deadline is <strong>April 14, 2026</strong>.
               </li>
               <li>
-                <strong>At least one author of an accepted conference/workshop/ICFEC paper must register at the IEEE member or Non-Member price by March 14, 2026.</strong> An author with multiple accepted conference papers may receive a discount of NOK 2875 for each additional paper registration.
+                At least one author of an accepted conference/workshop/ICFEC paper must register at the <strong>IEEE member</strong> or <strong>Non-Member</strong> price by <strong>March 14</strong>, 2026. An author with multiple accepted conference papers may receive a discount of <strong>NOK 2875</strong> for each additional paper registration.
               </li>
               <li>
-                <strong>Member registration rates are available for professional members of IEEE.</strong>
+                Member registration rates are available for professional members of IEEE.
               </li>
               <li>
-                <strong>The conference paper page limit is 8. The short paper page limit is 5.</strong>
+                The conference paper page limit is 8. The short paper page limit is 5.
               </li>
               <li>
-                <strong>Registration can be canceled on or before April 20, 2026.</strong> An administrative fee of NOK 1000 will be deducted from each refund.
+                Registration can be canceled on or before <strong>April 20, 2026</strong>. An administrative fee of <strong>NOK 1000</strong> will be deducted from each refund.
               </li>
               <li>
-                <strong>Registration includes access to conference and workshop rooms, proceedings, food (lunches and breaks), gala dinner, social event, goodies, and one-week bus tickets.</strong>
+                Registration includes access to conference and workshop rooms, proceedings, food (lunches and breaks), gala dinner, social event, goodies, and one-week bus tickets.
               </li>
               <li>
-                <strong>A limited number of hotel rooms are available on the registration page.</strong>
+                A limited number of hotel rooms are available on the registration page.
               </li>
               <li>
-                <strong>For registration questions, please email</strong> registration@icfec2026.org.
+                For registration questions, please email <strong><span className="text-red-600">email@icfec2026.org</span></strong>.
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <div className="bg-white rounded-lg shadow-md overflow-hidden h-full">
             <div className="bg-blue-700 text-white p-4">
               <h3 className="text-lg font-semibold">IEEE Member Rates</h3>
@@ -102,7 +102,7 @@ const Registration = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

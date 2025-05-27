@@ -30,23 +30,23 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10 mb-10 max-w-3xl mx-auto text-lg opacity-90">
             <div className="flex items-center">
               <Calendar className="w-5 h-5 mr-2" />
-              <span>April 22-23, 2026</span>
+              <span>May 16-21, 2026</span>
             </div>
             <div className="flex items-center">
               <MapPin className="w-5 h-5 mr-2" />
-              <span>New York, United States</span>
+              <span>Sydney, Australia</span>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-5 mb-12">
             <button 
               onClick={() => handleNavClick('call-for-papers')}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg border border-blue-500/50"
+              className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg border border-blue-500/50"
             >
               Submit a Paper
             </button>
             <button 
-              className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 border border-white/30 rounded-lg transition duration-300 backdrop-blur-sm"
+              className="cursor-pointer bg-white/10 hover:bg-white/20 text-red-600 font-bold py-3 px-8 border border-white/30 rounded-lg transition duration-300 backdrop-blur-sm"
             >
               Register Now
             </button>
@@ -55,7 +55,7 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
           <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
             <button 
               onClick={() => handleNavClick('about')}
-              className="text-white opacity-80 hover:opacity-100 transition-opacity"
+              className="cursor-pointer text-white opacity-80 hover:opacity-100 transition-opacity"
             >
               <span className="block text-sm mb-2 font-medium">Learn More</span>
               <ChevronDown size={24} className="mx-auto" />

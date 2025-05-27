@@ -14,6 +14,42 @@ import Footer from '@/components/Footer';
 import { scrollToSection } from '@/utils/scrollToSection';
 import Hero from '@/components/Hero';
 
+// 섹션 설정 - 여기서 한번에 제어
+const SECTIONS_CONFIG = [
+  { id: 'home', label: 'HOME', enabled: true },
+  { id: 'about', label: 'ABOUT', enabled: true },
+  { id: 'call-for-papers', label: 'CALL FOR PAPERS', enabled: true },
+  { id: 'accepted-papers', label: 'ACCEPTED PAPERS', enabled: false }, // 비활성화
+  { id: 'submission-instructions', label: 'SUBMISSION INSTRUCTIONS', enabled: true },
+  { id: 'committees', label: 'COMMITTEES', enabled: true },
+  { id: 'registration', label: 'REGISTRATION', enabled: true },
+  { id: 'venue', label: 'VENUE', enabled: true },
+  { id: 'sponsors', label: 'SPONSORS', enabled: true },
+];
+
+// 활성화된 섹션만 필터링
+const ENABLED_SECTIONS = SECTIONS_CONFIG.filter(section => section.enabled);
+
+// 배경색을 동적으로 계산하는 함수
+const getSectionClasses = (sectionId: string) => {
+  const enabledSectionIds = ENABLED_SECTIONS.map(s => s.id);
+  const index = enabledSectionIds.indexOf(sectionId);
+  
+  // home 섹션은 제외하고 계산 (Hero 컴포넌트가 별도 배경을 가짐)
+  const actualIndex = index > 0 ? index - 1 : 0;
+  
+  // 기본 패딩 클래스
+  const basePadding = 'py-20 md:py-28';
+  
+  // sponsors 섹션은 다른 패딩 사용
+  if (sectionId === 'sponsors') {
+    return `${basePadding.replace('py-20 md:py-28', 'py-8 md:py-12')} ${actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm'}`;
+  }
+  
+  // 홀수/짝수에 따라 배경색 번갈아가며 적용
+  return `${basePadding} ${actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm'}`;
+};
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,25 +62,15 @@ export default function Home() {
       setIsScrolled(scrollPosition > 50);
       setShowScrollTop(scrollPosition > 300);
 
-      // Determine which section is in view
-      const sections = [
-        'home',
-        'about', 
-        'call-for-papers', 
-        'accepted-papers', 
-        'submission-instructions', 
-        'committees',
-        'registration',
-        'venue',
-        'sponsors'
-      ];
+      // 활성화된 섹션들만 체크
+      const enabledSectionIds = ENABLED_SECTIONS.map(section => section.id);
       
-      for (const section of sections) {
-        const element = document.getElementById(section);
+      for (const sectionId of enabledSectionIds) {
+        const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
           if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
+            setActiveSection(sectionId);
             break;
           }
         }
@@ -92,6 +118,7 @@ export default function Home() {
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
         handleNavClick={handleNavClick}
+        navSections={ENABLED_SECTIONS}
       />
 
       {/* Main Content */}
@@ -100,35 +127,37 @@ export default function Home() {
           <Hero handleNavClick={handleNavClick} />
         </div>
         
-        <section id="about" className="py-20 md:py-28 bg-white">
+        <section id="about" className={getSectionClasses('about')}>
           <About />
         </section>
         
-        <section id="call-for-papers" className="py-20 md:py-28 bg-blue-50/50 backdrop-blur-sm">
+        <section id="call-for-papers" className={getSectionClasses('call-for-papers')}>
           <CallForPapers />
         </section>
         
-        <section id="accepted-papers" className="py-20 md:py-28 bg-white">
-          <AcceptedPapers />
-        </section>
+        {SECTIONS_CONFIG.find(s => s.id === 'accepted-papers')?.enabled && (
+          <section id="accepted-papers" className={getSectionClasses('accepted-papers')}>
+            <AcceptedPapers />
+          </section>
+        )}
         
-        <section id="submission-instructions" className="py-20 md:py-28 bg-blue-50/50 backdrop-blur-sm">
+        <section id="submission-instructions" className={getSectionClasses('submission-instructions')}>
           <SubmissionInstructions />
         </section>
         
-        <section id="committees" className="py-20 md:py-28 bg-white">
+        <section id="committees" className={getSectionClasses('committees')}>
           <Committees />
         </section>
         
-        <section id="registration" className="py-20 md:py-28 bg-blue-50/50 backdrop-blur-sm">
+        <section id="registration" className={getSectionClasses('registration')}>
           <Registration />
         </section>
         
-        <section id="venue" className="py-20 md:py-28 bg-white">
+        <section id="venue" className={getSectionClasses('venue')}>
           <Venue />
         </section>
         
-        <section id="sponsors" className="py-8 md:py-12 bg-blue-50/50 backdrop-blur-sm">
+        <section id="sponsors" className={getSectionClasses('sponsors')}>
           <Sponsors />
         </section>
       </main>
