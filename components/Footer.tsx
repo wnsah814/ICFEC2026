@@ -1,4 +1,4 @@
-import { Mail, Calendar, ExternalLink } from 'lucide-react';
+import { Mail, Calendar } from 'lucide-react';
 
 const Footer = () => {
   return (
