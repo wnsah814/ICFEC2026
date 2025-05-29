@@ -48,7 +48,7 @@ const Header = ({ activeSection, isScrolled, mobileMenuOpen, setMobileMenuOpen, 
                     className={`transition-colors text-sm font-medium tracking-wide ${
                       isScrolled 
                         ? activeSection === link.id
-                          ? 'text-blue-600 border-b-2 border-blue-600 pb-1.5'
+                          ? 'text-blue-600 border-b-3 border-blue-600 pb-1.5'
                           : 'text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 hover:pb-1.5'
                         : 'text-white hover:text-blue-200 hover:border-b-2 hover:border-white/70 hover:pb-1.5'
                     }`}

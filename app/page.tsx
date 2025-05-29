@@ -13,10 +13,12 @@ import Sponsors from '@/components/Sponsors';
 import Footer from '@/components/Footer';
 import { scrollToSection } from '@/utils/scrollToSection';
 import Hero from '@/components/Hero';
+import NoticeAndDates from '@/components/NoticeAndDates';
 
 // 섹션 설정 - 여기서 한번에 제어
 const SECTIONS_CONFIG = [
   { id: 'home', label: 'HOME', enabled: true },
+  { id: 'notice-dates', label: 'NOTICE & DATES', enabled: true },
   { id: 'about', label: 'ABOUT', enabled: true },
   { id: 'call-for-papers', label: 'CALL FOR PAPERS', enabled: true },
   { id: 'accepted-papers', label: 'ACCEPTED PAPERS', enabled: false }, // 비활성화
@@ -52,6 +54,7 @@ const getSectionClasses = (sectionId: string) => {
 
 // Section id to component mapping
 const SECTION_COMPONENTS: Record<string, React.ComponentType<any>> = {
+  'notice-dates': NoticeAndDates,
   about: About,
   'call-for-papers': CallForPapers,
   'accepted-papers': AcceptedPapers,
@@ -76,17 +79,20 @@ export default function Home() {
 
       // 활성화된 섹션들만 체크
       const enabledSectionIds = ENABLED_SECTIONS.map(section => section.id);
-      
+      let closestSection = enabledSectionIds[0];
+      let minDistance = Number.POSITIVE_INFINITY;
       for (const sectionId of enabledSectionIds) {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(sectionId);
-            break;
+          const distance = Math.abs(rect.top - 100); // 100px 아래를 기준
+          if (rect.top <= 120 && distance < minDistance) {
+            minDistance = distance;
+            closestSection = sectionId;
           }
         }
       }
+      setActiveSection(closestSection);
     };
 
     window.addEventListener('scroll', handleScroll);
