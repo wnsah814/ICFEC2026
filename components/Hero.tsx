@@ -19,7 +19,7 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
     }, [images.length]);
 
     return (
-        <div id="hero" className="relative h-screen flex items-center justify-center text-white overflow-hidden">
+        <div id="hero" className="relative h-dvh flex items-center justify-center text-white overflow-hidden">
             {/* Image Carousel */}
             <div className="absolute inset-0">
                 {images.map((image, index) => (

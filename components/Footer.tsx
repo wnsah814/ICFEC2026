@@ -19,7 +19,7 @@ const Footer = () => {
                 <li>
                   <a 
                     className="facebook bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors" 
-                    href="https://www.facebook.com/sharer/sharer.php?u=https://icfec2026.ontariotechu.ca/"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://icfec2026.hanyang.ac.kr/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -31,7 +31,7 @@ const Footer = () => {
                 <li>
                   <a 
                     className="twitter bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors" 
-                    href="http://twitter.com/share?text=IEEE%20Int.%20Conf.%20on%20Fog%20and%20Edge%20Computing%202026&amp;url=https://icfec2026.ontariotechu.ca/&amp;hashtags=computing,edge,distributedsystems,cloud,computerscience,edgeai,edgecomputing,fogcomputing"
+                    href="http://twitter.com/share?text=IEEE%20Int.%20Conf.%20on%20Fog%20and%20Edge%20Computing%202026&amp;url=https://icfec2026.hanyang.ac.kr/&amp;hashtags=computing,edge,distributedsystems,cloud,computerscience,edgeai,edgecomputing,fogcomputing"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -43,7 +43,7 @@ const Footer = () => {
                 <li>
                   <a 
                     className="linkedin bg-blue-800 hover:bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center transition-colors" 
-                    href="https://www.linkedin.com/sharing/share-offsite/?url=https://icfec2026.ontariotechu.ca/"
+                    href="https://www.linkedin.com/sharing/share-offsite/?url=https://icfec2026.hanyang.ac.kr/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -96,15 +96,8 @@ const Footer = () => {
               <li className="flex">
                 <Mail className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <div>
-                  <p>Khalid Elgazzar</p>
-                  <p className="text-sm text-gray-400">khalid.elgazzar[at]ontariotech.ca</p>
-                </div>
-              </li>
-              <li className="flex">
-                <Mail className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
-                <div>
-                  <p>Stefan Schulte</p>
-                  <p className="text-sm text-gray-400">stefan.schulte[at]tuhh.de</p>
+                  <p>Conference Email</p>
+                  <p className="text-sm text-gray-400">icfec2026@gmail.com</p>
                 </div>
               </li>
             </ul>
