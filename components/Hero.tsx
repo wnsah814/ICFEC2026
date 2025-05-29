@@ -45,10 +45,6 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
             </div>
 
             <div className="container mx-auto px-4 z-10 text-center">
-                <div className="inline-block mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-                    <span className="font-medium text-sm tracking-wider uppercase">IEEE ICFEC 2026</span>
-                </div>
-
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg tracking-tight">
                     <span className="text-white">10th IEEE International Conference</span><br />
                     <span className="text-white">on Fog and Edge Computing</span>
