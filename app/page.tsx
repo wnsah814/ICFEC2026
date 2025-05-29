@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import Header from '@/components/Header';
 import About from '@/components/About';
 import CallForPapers from '@/components/CallForPapers';
@@ -53,7 +53,7 @@ const getSectionClasses = (sectionId: string) => {
 };
 
 // Section id to component mapping
-const SECTION_COMPONENTS: Record<string, React.ComponentType<any>> = {
+const SECTION_COMPONENTS: Record<string, FC> = {
   'notice-dates': NoticeAndDates,
   about: About,
   'call-for-papers': CallForPapers,

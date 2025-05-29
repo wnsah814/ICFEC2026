@@ -10,19 +10,13 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIsTransitioning(true);
-            setTimeout(() => {
-                setCurrentImageIndex((prev) => (prev + 1) % images.length);
-                setIsTransitioning(false);
-            }, 1000); // Fade out duration
-        }, 5000); // Change image every 5 seconds
-
+            setCurrentImageIndex((prev) => (prev + 1) % images.length);
+        }, 5000);
         return () => clearInterval(interval);
-    }, []);
+    }, [images.length]);
 
     return (
         <div id="hero" className="relative h-screen flex items-center justify-center text-white overflow-hidden">
