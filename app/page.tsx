@@ -141,7 +141,7 @@ export default function Home() {
 
       {/* Main Content */}
       <main>
-        <div id="home">
+        <div id="home" className='h-lvh'>
           <Hero handleNavClick={handleNavClick} />
         </div>
         {SECTIONS_CONFIG.filter(s => s.id !== 'home' && s.enabled).map(section => {
