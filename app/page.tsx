@@ -22,9 +22,9 @@ const SECTIONS_CONFIG = [
   { id: 'accepted-papers', label: 'ACCEPTED PAPERS', enabled: false }, // 비활성화
   { id: 'submission-instructions', label: 'SUBMISSION INSTRUCTIONS', enabled: true },
   { id: 'committees', label: 'COMMITTEES', enabled: true },
-  { id: 'registration', label: 'REGISTRATION', enabled: true },
-  { id: 'venue', label: 'VENUE', enabled: true },
-  { id: 'sponsors', label: 'SPONSORS', enabled: true },
+  { id: 'registration', label: 'REGISTRATION', enabled: false },
+  { id: 'venue', label: 'VENUE', enabled: false },
+  { id: 'sponsors', label: 'SPONSORS', enabled: false },
 ];
 
 // 활성화된 섹션만 필터링
@@ -48,6 +48,18 @@ const getSectionClasses = (sectionId: string) => {
   
   // 홀수/짝수에 따라 배경색 번갈아가며 적용
   return `${basePadding} ${actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm'}`;
+};
+
+// Section id to component mapping
+const SECTION_COMPONENTS: Record<string, React.ComponentType<any>> = {
+  about: About,
+  'call-for-papers': CallForPapers,
+  'accepted-papers': AcceptedPapers,
+  'submission-instructions': SubmissionInstructions,
+  committees: Committees,
+  registration: Registration,
+  venue: Venue,
+  sponsors: Sponsors,
 };
 
 export default function Home() {
@@ -126,40 +138,15 @@ export default function Home() {
         <div id="home">
           <Hero handleNavClick={handleNavClick} />
         </div>
-        
-        <section id="about" className={getSectionClasses('about')}>
-          <About />
-        </section>
-        
-        <section id="call-for-papers" className={getSectionClasses('call-for-papers')}>
-          <CallForPapers />
-        </section>
-        
-        {SECTIONS_CONFIG.find(s => s.id === 'accepted-papers')?.enabled && (
-          <section id="accepted-papers" className={getSectionClasses('accepted-papers')}>
-            <AcceptedPapers />
-          </section>
-        )}
-        
-        <section id="submission-instructions" className={getSectionClasses('submission-instructions')}>
-          <SubmissionInstructions />
-        </section>
-        
-        <section id="committees" className={getSectionClasses('committees')}>
-          <Committees />
-        </section>
-        
-        <section id="registration" className={getSectionClasses('registration')}>
-          <Registration />
-        </section>
-        
-        <section id="venue" className={getSectionClasses('venue')}>
-          <Venue />
-        </section>
-        
-        <section id="sponsors" className={getSectionClasses('sponsors')}>
-          <Sponsors />
-        </section>
+        {SECTIONS_CONFIG.filter(s => s.id !== 'home' && s.enabled).map(section => {
+          const SectionComponent = SECTION_COMPONENTS[section.id];
+          if (!SectionComponent) return null;
+          return (
+            <section key={section.id} id={section.id} className={getSectionClasses(section.id)}>
+              <SectionComponent />
+            </section>
+          );
+        })}
       </main>
 
       {/* Scroll to Top Button */}
