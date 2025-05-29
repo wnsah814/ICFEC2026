@@ -60,7 +60,7 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
                     <span className="text-white">on Fog and Edge Computing</span>
                 </h1>
 
-                <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10 mb-10 max-w-3xl mx-auto text-lg">
+                <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10 mb-14 md:mb-20 max-w-3xl mx-auto text-lg">
                     <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                         <Calendar className="w-5 h-5 mr-2" />
                         <span>May 16-21, 2026</span>
@@ -77,11 +77,6 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
                         className="cursor-pointer bg-white hover:bg-white/90 text-blue-900 font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg"
                     >
                         Submit a Paper
-                    </button>
-                    <button 
-                        className="cursor-pointer bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 border border-white/30 rounded-lg transition duration-300 backdrop-blur-sm"
-                    >
-                        Register Now
                     </button>
                 </div>
 
