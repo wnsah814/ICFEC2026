@@ -18,6 +18,10 @@ const Committees = () => {
                 <a href="#" className="text-blue-600 hover:underline">Flavia Delicato</a>
                 <p className="text-sm text-gray-600">Fluminense Federal University, Brazil</p>
               </li>
+              <li>
+                <a href="#" className="text-blue-600 hover:underline">Stefan Schulte</a>
+                <p className="text-sm text-gray-600">Hamburg University of Technology, Germany</p>
+              </li>
             </ul>
           </div>
           
