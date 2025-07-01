@@ -14,7 +14,7 @@ const Footer = () => {
               The IEEE International Conference on Fog and Edge Computing (ICFEC) is the premier conference on fog and edge computing.
             </p>
             <div className="widget">
-              <h5 className="text-red-600 widget-title text-lg font-bold mb-4 uppercase tracking-wider">SHARE ON SOCIAL MEDIA</h5>
+              <h5 className="widget-title text-lg font-bold mb-4 uppercase tracking-wider">SHARE ON SOCIAL MEDIA</h5>
               <ul className="footer-social flex space-x-3">
                 <li>
                   <a 
@@ -55,36 +55,35 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          
           <div>
             <h3 className="text-lg font-bold mb-4 uppercase tracking-wider">Important Dates</h3>
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-start">
                 <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Paper Abstract</p>
-                  <p className="text-sm text-gray-400">December 1, 2025</p>
+                  <p className="font-medium">Paper Submission Deadline</p>
+                  <p className="text-sm text-gray-400">9th January 2026</p>
                 </div>
               </li>
               <li className="flex items-start">
                 <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">Paper Submission</p>
-                  <p className="text-sm text-gray-400">December 15, 2025</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Author Notification</p>
-                  <p className="text-sm text-gray-400">February 10, 2026</p>
+                  <p className="font-medium">Notification of Acceptance</p>
+                  <p className="text-sm text-gray-400">16th February 2026</p>
                 </div>
               </li>
               <li className="flex items-start">
                 <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Camera-ready Submission</p>
-                  <p className="text-sm text-gray-400">March 15, 2026</p>
+                  <p className="text-sm text-gray-400">15th March 2026</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-medium">Conference Dates</p>
+                  <p className="text-sm text-gray-400">18-21 May 2026</p>
                 </div>
               </li>
             </ul>

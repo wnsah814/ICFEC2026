@@ -14,11 +14,10 @@ const notices = [
 ];
 
 const importantDates = [
-  { label: 'Paper Abstract Deadline', date: '2025-12-01' },
-  { label: 'Paper Submission Deadline', date: '2025-12-15' },
-  { label: 'Notification of Acceptance', date: '2026-02-10' },
-  { label: 'Camera-Ready Due', date: '2026-03-15' },
-  { label: 'Conference Dates', date: '2026-05-16 ~ 2026-05-21' },
+  { label: 'Paper Submission Deadline', date: '9th January 2026' },
+  { label: 'Notification of Acceptance', date: '16th February 2026' },
+  { label: 'Camera-Ready Due', date: '15th March 2026' },
+  { label: 'Conference Dates', date: '18-21 May 2026' },
 ];
 
 const NoticeAndDates: React.FC = () => {

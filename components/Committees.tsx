@@ -40,59 +40,23 @@ const Committees = () => {
           </div>
 
           <div className="col-span-1">
-            <h4 className="text-lg font-medium mb-4 border-b border-gray-200 pb-2">Steering Committee</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-blue-600 hover:underline">Name</a>
-                <p className="text-sm text-gray-600">University, Country</p>
-              </li>
-              <li>
-                <a href="#" className="text-blue-600 hover:underline">Name</a>
-                <p className="text-sm text-gray-600">University, Country</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="col-span-1">
-            <h4 className="text-lg font-medium mb-4 border-b border-gray-200 pb-2">Poster and Demo Chairs</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-blue-600 hover:underline">Chair Name</a>
-                <p className="text-sm text-gray-600">University, Country</p>
-              </li>
-              <li>
-                <a href="#" className="text-blue-600 hover:underline">Chair Name</a>
-                <p className="text-sm text-gray-600">University, Country</p>
-              </li>
-            </ul>
-          </div>
-          <div className="col-span-1">
-            <h4 className="text-lg font-medium mb-4 border-b border-gray-200 pb-2">Publication Chairs</h4>
-            <ul className="space-y-3">
-            <li>
-                <a href="#" className="text-blue-600 hover:underline">Chair Name</a>
-                <p className="text-sm text-gray-600">University, Country</p>
-              </li>
-              <li>
-                <a href="#" className="text-blue-600 hover:underline">Chair Name</a>
-                <p className="text-sm text-gray-600">University, Country</p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="col-span-1">
             <h4 className="text-lg font-medium mb-4 border-b border-gray-200 pb-2">Publicity Chairs</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-blue-600 hover:underline">Yipeng Zhou</a>
                 <p className="text-sm text-gray-600">Macquarie University, Australia</p>
               </li>
+              <li>
+                <a href="#" className="text-blue-600 hover:underline">Evandro Macedo</a>
+                <p className="text-sm text-gray-600">UERJ, Brazil</p>
+              </li>
+              <li>
+                <a href="#" className="text-blue-600 hover:underline">Lidia Fotia</a>
+                <p className="text-sm text-gray-600">University of Salerno, Italy</p>
+              </li>
             </ul>
           </div>
         </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-1">
             <h4 className="text-lg font-medium mb-4 border-b border-gray-200 pb-2">Local Arrangement Chairs</h4>

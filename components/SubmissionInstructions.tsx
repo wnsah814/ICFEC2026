@@ -5,44 +5,12 @@ const SubmissionInstructions = () => {
       
       <div className="max-w-4xl mx-auto prose prose-blue">
         <p className="text-gray-700 leading-relaxed">
-          We invite original manuscripts that have neither been published elsewhere nor are under review at a different venue. 
-          Papers should follow the IEEE template for conference proceedings.
+          All papers must be original and not simultaneously submitted to another journal or conference. Full/Regular Paper submissions should follow the IEEE template for conference proceedings. Authors should submit papers, written in English, electronically in PDF format, and may not exceed 8 letter-size pages in length, including all figures, tables, and references. Apart from regular papers, authors may also submit short papers and extended abstracts for posters. All manuscripts will be reviewed and judged on originality, technical strength, significance, presentation, and relevance to the conference by at least three reviewers. Papers may be submitted online at <a href="https://easychair.org" className="text-red-600 hover:text-blue-800 transition-colors">EasyChair</a>.
         </p>
         
         <p className="text-gray-700 leading-relaxed">
-          Authors should submit papers, written in English, electronically in PDF format, and may not exceed 8 letter-size 
-          pages in length, including all figures, tables, and references. Apart from full papers, authors may also submit 
-          poster papers, which may not exceed 2 pages in length. All manuscripts will be reviewed and judged on originality, 
-          technical strength, significance, presentation, and relevance to the conference by at least three reviewers.
+          Papers that are accepted for publication may be accepted as REGULAR papers (8 pages), SHORT papers (4 pages), or extended abstracts for POSTER (2 pages), depending on the reviewers&apos; recommendations. Accepted regular, short, and poster papers will be included in the conference proceedings that will be published through the IEEE Computer Society Conference Publishing Services.          
         </p>
-        
-        <p className="text-gray-700 leading-relaxed">
-          Papers may be submitted online at <a href="https://easychair.org" className="text-red-600 hover:text-blue-800 transition-colors">EasyChair</a>. 
-          Papers that are accepted for publication may be accepted as REGULAR papers (8 pages), SHORT papers (5 pages) or 
-          POSTER papers (2 pages), depending on the reviewers&apos; recommendations. Accepted regular, short, and poster papers 
-          will be included in the conference proceedings that will be published through the IEEE Computer Society Conference Publishing Services.
-        </p>
-
-        {/* <div className="bg-yellow-50 p-5 my-8 rounded-lg border border-yellow-100">
-          <h3 className="text-xl font-semibold mb-4 text-yellow-800">Submission Format</h3>
-          <p className="text-gray-700">
-            All submissions must use the IEEE conference proceedings templates. The templates are available in 
-            <a href="https://www.ieee.org/conferences/publishing/templates.html" className="text-blue-600 hover:text-blue-800 transition-colors mx-1">Microsoft Word and LaTeX</a> 
-            formats.
-          </p>
-          <p className="text-gray-700 mt-3">
-            Please note that all deadlines are Anywhere on Earth (AoE, UTC-12 timezone).
-          </p>
-        </div>
-        
-        <div className="bg-green-50 p-5 my-8 rounded-lg border border-green-100">
-          <h3 className="text-xl font-semibold mb-4 text-green-800">Paper Categories</h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li><span className="font-medium">Regular Paper:</span> Up to 8 pages</li>
-            <li><span className="font-medium">Short Paper:</span> Up to 5 pages</li>
-            <li><span className="font-medium">Poster Paper:</span> Up to 2 pages</li>
-          </ul>
-        </div> */}
       </div>
     </div>
   );
