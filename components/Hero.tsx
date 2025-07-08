@@ -53,7 +53,7 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
                 <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10 mb-14 md:mb-20 max-w-3xl mx-auto text-lg">
                     <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                         <Calendar className="w-5 h-5 mr-2" />
-                        <span>May 18-21, 2026</span>
+                        <span>18-21 May 2026</span>
                     </div>
                     <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                         <MapPin className="w-5 h-5 mr-2" />

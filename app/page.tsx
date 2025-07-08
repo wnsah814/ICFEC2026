@@ -44,8 +44,8 @@ const getSectionClasses = (sectionId: string) => {
   const basePadding = 'py-20 md:py-28';
   
   // sponsors 섹션은 다른 패딩 사용
-  if (sectionId === 'sponsors') {
-    return `${basePadding.replace('py-20 md:py-28', 'py-8 md:py-12')} ${actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm'}`;
+  if (sectionId === 'notice-dates') {
+    return `${basePadding.replace('py-20 md:py-28', 'py-16 md:py-20')} ${actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm'}`;
   }
   
   // 홀수/짝수에 따라 배경색 번갈아가며 적용
