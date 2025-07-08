@@ -80,7 +80,7 @@ const Committees = () => {
                 <p className="text-sm text-gray-600">Hanyang University, South Korea</p>
               </li>
               <li>
-                <a href="#" className="text-blue-600 hover:underline">Junmo Seong</a>
+                <a href="https://github.com/wnsah814" className="text-blue-600 hover:underline">Junmo Seong</a>
                 <p className="text-sm text-gray-600">Hanyang University, South Korea</p>
               </li>
               <li>
