@@ -1,4 +1,5 @@
 import { X, Menu } from "lucide-react";
+import Image from "next/image";
 
 interface HeaderProps {
   activeSection: string;
@@ -39,15 +40,18 @@ const Header = ({
             setMobileMenuOpen(false);
           }}
         >
-          <img
+          <Image
             src="/images/ieee_blue.svg"
             alt="IEEE"
+            width={60}
+            height={20}
             className={`transition-all duration-300 mr-2 h-5`}
             style={{
               filter: isScrolled ? "none" : "brightness(0) invert(1)",
               maxWidth: "auto",
               objectFit: "contain",
             }}
+            priority
           />
           <span className="whitespace-nowrap">ICFEC 2026</span>
         </a>
