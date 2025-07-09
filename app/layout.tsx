@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'ICFEC 2026 - IEEE International Conference on Fog and Edge Computing',
-    description: 'ICFEC2026 - 10th IEEE International Conference on Fog and Edge Computing. Submit your research on fog computing, edge computing, IoT, and distributed systems.',
+    description: 'ICFEC2026 - 10th IEEE International Conference on Fog and Edge Computing.',
     url: 'https://icfec2026.hanyang.ac.kr',
     siteName: 'ICFEC 2026',
     locale: 'en_US',
@@ -91,6 +91,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
+              "@context": "https://schema.org",
               "@type": "Event",
               "name": "ICFEC 2026 - IEEE International Conference on Fog and Edge Computing",
               "description": "10th IEEE International Conference on Fog and Edge Computing",
