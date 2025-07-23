@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'ICFEC 2026 - IEEE International Conference on Fog and Edge Computing',
-  description: 'ICFEC2026 - 10th IEEE International Conference on Fog and Edge Computing. Submit your research on fog computing, edge computing, IoT, and distributed systems.',
+  title: 'ICFEC 2026 - 10th IEEE International Conference on Fog and Edge Computing',
+  description: 'ICFEC2026 - 10th IEEE International Conference on Fog and Edge Computing.',
   keywords: [
     'ICFEC',
     'ICFEC2026', 
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'ICFEC 2026 - IEEE International Conference on Fog and Edge Computing',
+    title: 'ICFEC 2026 - 10th IEEE International Conference on Fog and Edge Computing',
     description: 'ICFEC2026 - 10th IEEE International Conference on Fog and Edge Computing.',
     url: 'https://icfec2026.hanyang.ac.kr',
     siteName: 'ICFEC 2026',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         url: '/images/1_SydneyAerial.jpg',
         width: 1200,
         height: 630,
-        alt: 'ICFEC 2026 - IEEE International Conference on Fog and Edge Computing',
+        alt: 'ICFEC 2026 - 10th IEEE International Conference on Fog and Edge Computing',
       },
     ],
   },
@@ -93,7 +93,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Event",
-              "name": "ICFEC 2026 - IEEE International Conference on Fog and Edge Computing",
+              "name": "ICFEC 2026 - 10th IEEE International Conference on Fog and Edge Computing",
               "description": "10th IEEE International Conference on Fog and Edge Computing",
               "url": "https://icfec2026.hanyang.ac.kr",
               "location": {
