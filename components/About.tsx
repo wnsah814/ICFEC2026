@@ -10,7 +10,7 @@ const About = () => {
         
         <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
           <p className="text-gray-700 mb-6 leading-relaxed">
-          The 10th IEEE International Conference on Fog and Edge Computing (ICFEC 2026) is a premier forum that brings together researchers, practitioners, industry experts, and technologists to discuss and explore the latest developments, trends, and innovations in fog and edge computing. ICFEC 2026 will be held in conjunction with the 26th International Symposium on Cluster, Cloud and Internet Computing (<a href="https://ccgrid2026.cdms.westernsydney.edu.au/" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors">CCGrid 2026</a>) in Sydney, Australia.
+          The 10th IEEE International Conference on Fog and Edge Computing (ICFEC 2026) is a premier forum that brings together researchers, practitioners, industry experts, and technologists to discuss and explore the latest developments, trends, and innovations in fog and edge computing. ICFEC 2026 will be held in conjunction with the 26th International Symposium on Cluster, Cloud and Internet Computing (<a href="https://ccgrid2026.org" target="_blank" className="text-blue-600 hover:text-blue-800 transition-colors">CCGrid 2026</a>) in Sydney, Australia.
           </p>
           
           <p className="text-gray-700 leading-relaxed">
