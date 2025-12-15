@@ -36,9 +36,9 @@ const NoticeAndDates: React.FC = () => {
 
   return (
     <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-16 py-16 md:py-24 px-2 md:px-8">
-      {/* Notices */}
+      {/* Announcements */}
       <div className="flex-1 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-12 min-h-[340px]">
-        <h2 className="text-3xl font-bold mb-6 text-blue-900">Notices</h2>
+        <h2 className="text-3xl font-bold mb-6 text-blue-900">Announcements</h2>
         <ul className="space-y-6">
           {notices.map((notice, idx) => (
             <li
