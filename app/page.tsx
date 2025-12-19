@@ -18,7 +18,7 @@ import NoticeAndDates from '@/components/NoticeAndDates';
 // 섹션 설정 - 여기서 한번에 제어
 const SECTIONS_CONFIG = [
   { id: 'home', label: 'HOME', enabled: true },
-  { id: 'notice-dates', label: 'NOTICE & DATES', enabled: true },
+  { id: 'notice-dates', label: 'IMPORTANT DATES', enabled: true },
   { id: 'about', label: 'ABOUT', enabled: true },
   { id: 'call-for-papers', label: 'CALL FOR PAPERS', enabled: true },
   { id: 'accepted-papers', label: 'ACCEPTED PAPERS', enabled: false }, // 비활성화
