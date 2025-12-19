@@ -62,14 +62,16 @@ const Footer = () => {
                 <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Paper Submission Deadline</p>
-                  <p className="text-sm text-gray-400">9th January 2026</p>
+                  <p className="text-sm text-gray-500 line-through">9th January 2026</p>
+                  <p className="text-sm text-red-400 font-semibold">18th January 2026</p>
                 </div>
               </li>
               <li className="flex items-start">
                 <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Notification of Acceptance</p>
-                  <p className="text-sm text-gray-400">16th February 2026</p>
+                  <p className="text-sm text-gray-500 line-through">16th February 2026</p>
+                  <p className="text-sm text-red-400 font-semibold">23rd February 2026</p>
                 </div>
               </li>
               <li className="flex items-start">

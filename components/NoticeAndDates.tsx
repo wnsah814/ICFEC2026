@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 
 const notices = [
   {
+    title: 'Deadline Extension',
+    date: '2025-12-19',
+    content: 'The paper submission deadline along with the notification date has been extended to 18th January 2026.'
+  },
+  {
     title: 'Welcome to IEEE ICFEC 2026!',
     date: '2025-05-28',
     content: 'The conference website is now live. Stay tuned for updates!'
   },
-  {
-    title: 'Call for Papers Open',
-    date: '2025-05-29',
-    content: 'Paper submission is now open. Check the Call for Papers section for details.'
-  },
 ];
 
 const importantDates = [
-  { label: 'Paper Submission Deadline', date: '9th January 2026' },
-  { label: 'Notification of Acceptance', date: '16th February 2026' },
+  { label: 'Paper Submission Deadline', date: '18th January 2026', oldDate: '9th January 2026' },
+  { label: 'Notification of Acceptance', date: '23rd February 2026', oldDate: '16th February 2026' },
   { label: 'Camera-Ready Due', date: '15th March 2026' },
   { label: 'Conference Dates', date: '18-21 May 2026' },
 ];
@@ -60,7 +60,14 @@ const NoticeAndDates: React.FC = () => {
           {importantDates.map((item, idx) => (
             <li key={idx} className="flex justify-between items-center border-b border-blue-100 pb-3 last:border-b-0">
               <span className="font-medium text-blue-800 text-base md:text-lg">{item.label}</span>
-              <span className="text-gray-700 text-sm md:text-base ml-4 whitespace-nowrap">{item.date}</span>
+              {'oldDate' in item ? (
+                <div className="text-right ml-4">
+                  <div className="text-gray-400 text-sm line-through">{item.oldDate}</div>
+                  <div className="text-red-600 text-sm md:text-base font-semibold">{item.date}</div>
+                </div>
+              ) : (
+                <span className="text-gray-700 text-sm md:text-base ml-4 whitespace-nowrap">{item.date}</span>
+              )}
             </li>
           ))}
         </ul>
