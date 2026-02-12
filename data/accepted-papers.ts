@@ -10,7 +10,7 @@ export interface Session {
   papers: Paper[];
 }
 
-export const CONFERENCE_DAY = 'Thursday, May 22, 2026';
+export const CONFERENCE_DAY = 'Thursday, May 21, 2026';
 
 export const SESSIONS: Session[] = [
   {
