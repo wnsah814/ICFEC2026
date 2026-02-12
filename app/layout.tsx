@@ -86,7 +86,7 @@ export default function RootLayout({
         {/* Website developed by wnsah814 */}
         <meta name="developer" content="wnsah814" />
         <meta name="generator" content="Next.js - Developer: wnsah814" />
-        {/* 추가적인 SEO 개선을 위한 스키마 마크업 */}
+        {/* Structured data for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

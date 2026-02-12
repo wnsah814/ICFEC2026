@@ -49,7 +49,8 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-5 mb-12">
-                    <button 
+                    <button
+                        type="button"
                         onClick={() => handleNavClick('call-for-papers')}
                         className="cursor-pointer bg-white hover:bg-white/90 text-blue-900 font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg"
                     >
@@ -58,7 +59,8 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
                 </div>
 
                 <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-                    <button 
+                    <button
+                        type="button"
                         onClick={() => handleNavClick('about')}
                         className="cursor-pointer text-white opacity-80 hover:opacity-100 transition-opacity px-4 py-2 rounded-lg"
                     >

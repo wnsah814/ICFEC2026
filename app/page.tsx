@@ -150,6 +150,7 @@ export default function Home() {
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
+          type="button"
           onClick={handleScrollToTop}
           className="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-opacity hover:bg-blue-700 focus:outline-none z-50 cursor-pointer"
           aria-label="Scroll to top"

@@ -1,5 +1,6 @@
 import { X, Menu } from "lucide-react";
 import Image from "next/image";
+import { CONFERENCE } from "@/constants/conference";
 
 interface HeaderProps {
   activeSection: string;
@@ -18,7 +19,6 @@ const Header = ({
   handleNavClick,
   navSections,
 }: HeaderProps) => {
-  const navLinks = navSections;
 
   return (
     <header
@@ -45,21 +45,18 @@ const Header = ({
             alt="IEEE"
             width={60}
             height={20}
-            className={`transition-all duration-300 mr-2 h-5`}
-            style={{
-              filter: isScrolled ? "none" : "brightness(0) invert(1)",
-              maxWidth: "auto",
-              objectFit: "contain",
-            }}
+            className={`transition-all duration-300 mr-2 h-5 object-contain ${
+              isScrolled ? "" : "brightness-0 invert"
+            }`}
             priority
           />
-          <span className="whitespace-nowrap">ICFEC 2026</span>
+          <span className="whitespace-nowrap">{CONFERENCE.name}</span>
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            {navLinks.map((link) => (
+            {navSections.map((link) => (
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}
@@ -84,6 +81,7 @@ const Header = ({
 
         {/* Mobile Menu Button */}
         <button
+          type="button"
           className={`md:hidden focus:outline-none p-2 rounded-full transition-colors ${
             isScrolled
               ? "text-blue-800 hover:bg-blue-50"
@@ -99,7 +97,7 @@ const Header = ({
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 md:hidden bg-white shadow-lg z-50 transition-all duration-300 ease-in-out rounded-b-lg mx-4 mt-1 overflow-hidden">
           <ul className="py-4">
-            {navLinks.map((link) => (
+            {navSections.map((link) => (
               <li
                 key={link.id}
                 className="border-b border-gray-100 last:border-b-0"
