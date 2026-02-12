@@ -1,5 +1,6 @@
 import { Mail, Calendar } from 'lucide-react';
 import { IMPORTANT_DATES } from '@/constants/dates';
+import { CONFERENCE } from '@/constants/conference';
 
 const Footer = () => {
   return (
@@ -9,10 +10,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               <div className="bg-blue-600 text-white px-2 py-1 rounded mr-2 text-sm font-bold">IEEE</div>
-              <h3 className="text-xl font-bold">ICFEC 2026</h3>
+              <h3 className="text-xl font-bold">{CONFERENCE.name}</h3>
             </div>
             <p className="text-gray-300 mb-5 pr-4">
-              The IEEE International Conference on Fog and Edge Computing (ICFEC) is the premier conference on fog and edge computing.
+              {CONFERENCE.description}
             </p>
             <div className="widget">
               <h5 className="widget-title text-lg font-bold mb-4 uppercase tracking-wider">SHARE ON SOCIAL MEDIA</h5>
@@ -83,7 +84,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <div>
                   <p>Conference Email</p>
-                  <p className="text-sm text-gray-400">icfec2026@gmail.com</p>
+                  <p className="text-sm text-gray-400">{CONFERENCE.email}</p>
                 </div>
               </li>
             </ul>

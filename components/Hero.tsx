@@ -1,28 +1,24 @@
 import { ChevronDown, Calendar, MapPin } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { CONFERENCE } from '@/constants/conference';
+import { HERO_IMAGES } from '@/data/hero';
 
 const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
-    const images = [
-        '/images/1_SydneyAerial.jpg',
-        '/images/2_bondibeach.png',
-        '/images/3_fishing.jpg',
-        '/images/4_MQ.png'
-    ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % images.length);
+            setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
         }, 5000);
         return () => clearInterval(interval);
-    }, [images.length]);
+    }, [HERO_IMAGES.length]);
 
     return (
         <div id="hero" className="relative h-dvh flex items-center justify-center text-white overflow-hidden">
             {/* Image Carousel */}
             <div className="absolute inset-0">
-                {images.map((image, index) => (
+                {HERO_IMAGES.map((image, index) => (
                     <div
                         key={image}
                         className={`absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden transition-opacity duration-1000 ${
@@ -44,11 +40,11 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
                 <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-10 mb-14 md:mb-20 max-w-3xl mx-auto text-lg">
                     <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                         <Calendar className="w-5 h-5 mr-2" />
-                        <span>18-21 May 2026</span>
+                        <span>{CONFERENCE.dates}</span>
                     </div>
                     <div className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
                         <MapPin className="w-5 h-5 mr-2" />
-                        <span>Sydney, Australia</span>
+                        <span>{CONFERENCE.location}</span>
                     </div>
                 </div>
 

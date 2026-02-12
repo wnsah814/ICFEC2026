@@ -1,29 +1,6 @@
 import React, { useState } from 'react';
 import { IMPORTANT_DATES } from '@/constants/dates';
-
-const notices = [
-  {
-    title: 'Deadline Extension',
-    date: '2025-12-19',
-    content: 'The paper submission deadline has been extended to 18th January 2026.'
-  },
-  {
-    title: 'Call for Papers Open',
-    date: '2025-05-29',
-    content: 'Paper submission is now open. Check the Call for Papers section for details.'
-  },
-  {
-    title: 'Welcome to IEEE ICFEC 2026!',
-    date: '2025-05-28',
-    content: 'The conference website is now live. Stay tuned for updates!'
-  },
-];
-
-interface Notice {
-  title: string;
-  date: string;
-  content: string;
-}
+import { NOTICES, type Notice } from '@/data/notices';
 
 const NoticeAndDates: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,7 +22,7 @@ const NoticeAndDates: React.FC = () => {
       <div className="flex-1 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-10">
         <h2 className="text-3xl font-bold mb-5 text-blue-900">Announcements</h2>
         <ul className="space-y-4 max-h-[280px] overflow-y-auto pr-1">
-          {notices.map((notice, idx) => (
+          {NOTICES.map((notice, idx) => (
             <li
               key={idx}
               className="border-l-4 border-blue-500 pl-4 py-2 cursor-pointer hover:bg-blue-50/60 rounded transition"
