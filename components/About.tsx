@@ -1,5 +1,3 @@
-// import { Server, Cloud, Network } from 'lucide-react';
-
 const About = () => {
     return (
       <div className="container mx-auto px-4">

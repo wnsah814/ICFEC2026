@@ -53,56 +53,6 @@ const Registration = () => {
             </ul>
           </div>
         </div>
-        
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden h-full">
-            <div className="bg-blue-700 text-white p-4">
-              <h3 className="text-lg font-semibold">IEEE Member Rates</h3>
-            </div>
-            <div className="p-6 space-y-3">
-              <div className="flex justify-between border-b pb-2">
-                <span>Early Registration (until April 14)</span>
-                <span className="font-semibold">NOK 7500</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span>Late Registration</span>
-                <span className="font-semibold">NOK 9000</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span>Student Early Registration</span>
-                <span className="font-semibold">NOK 4800</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Student Late Registration</span>
-                <span className="font-semibold">NOK 5800</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow-md overflow-hidden h-full">
-            <div className="bg-blue-700 text-white p-4">
-              <h3 className="text-lg font-semibold">Non-Member Rates</h3>
-            </div>
-            <div className="p-6 space-y-3">
-              <div className="flex justify-between border-b pb-2">
-                <span>Early Registration (until April 14)</span>
-                <span className="font-semibold">NOK 9000</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span>Late Registration</span>
-                <span className="font-semibold">NOK 10800</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span>Student Early Registration</span>
-                <span className="font-semibold">NOK 5760</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Student Late Registration</span>
-                <span className="font-semibold">NOK 6960</span>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
