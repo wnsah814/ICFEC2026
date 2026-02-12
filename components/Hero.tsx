@@ -25,19 +25,10 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
                 {images.map((image, index) => (
                     <div
                         key={image}
-                        className={`absolute inset-0 transition-opacity duration-1000 ${
+                        className={`absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden transition-opacity duration-1000 ${
                             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                         }`}
-                        style={{
-                            backgroundImage: `url(${image})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            overflow: 'hidden'
-                        }}
+                        style={{ backgroundImage: `url(${image})` }}
                     />
                 ))}
                 {/* Dark overlay for better text readability */}
