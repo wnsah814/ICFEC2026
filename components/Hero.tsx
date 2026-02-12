@@ -12,7 +12,7 @@ const Hero = ({ handleNavClick }: { handleNavClick: (id: string) => void }) => {
             setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
         }, 5000);
         return () => clearInterval(interval);
-    }, [HERO_IMAGES.length]);
+    }, []);
 
     return (
         <div id="hero" className="relative h-dvh flex items-center justify-center text-white overflow-hidden">
