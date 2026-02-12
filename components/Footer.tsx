@@ -1,4 +1,5 @@
 import { Mail, Calendar } from 'lucide-react';
+import { IMPORTANT_DATES } from '@/constants/dates';
 
 const Footer = () => {
   return (
@@ -58,36 +59,20 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4 uppercase tracking-wider">Important Dates</h3>
             <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start">
-                <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Paper Submission Deadline</p>
-                  <p className="text-sm text-gray-500 line-through">9th January 2026</p>
-                  <p className="text-sm text-red-400 font-semibold">18th January 2026</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Notification of Acceptance</p>
-                  <p className="text-sm text-gray-500 line-through">16th February 2026</p>
-                  <p className="text-sm text-red-400 font-semibold">23rd February 2026</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Camera-ready Submission</p>
-                  <p className="text-sm text-gray-400">15th March 2026</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Conference Dates</p>
-                  <p className="text-sm text-gray-400">18-21 May 2026</p>
-                </div>
-              </li>
+              {IMPORTANT_DATES.map((item, idx) => (
+                <li key={idx} className="flex items-start">
+                  <Calendar className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">{item.label}</p>
+                    {item.oldDate && (
+                      <p className="text-sm text-gray-500 line-through">{item.oldDate}</p>
+                    )}
+                    <p className={`text-sm ${item.oldDate ? 'text-red-400 font-semibold' : 'text-gray-400'}`}>
+                      {item.date}
+                    </p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
           

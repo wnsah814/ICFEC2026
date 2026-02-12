@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IMPORTANT_DATES } from '@/constants/dates';
 
 const notices = [
   {
@@ -18,18 +19,17 @@ const notices = [
   },
 ];
 
-const importantDates = [
-  { label: 'Paper Submission Deadline', date: '18th January 2026', oldDate: '9th January 2026' },
-  { label: 'Notification of Acceptance', date: '23rd February 2026', oldDate: '16th February 2026' },
-  { label: 'Camera-Ready Due', date: '15th March 2026' },
-  { label: 'Conference Dates', date: '18-21 May 2026' },
-];
+interface Notice {
+  title: string;
+  date: string;
+  content: string;
+}
 
 const NoticeAndDates: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedNotice, setSelectedNotice] = useState<typeof notices[0] | null>(null);
+  const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
 
-  const openModal = (notice: typeof notices[0]) => {
+  const openModal = (notice: Notice) => {
     setSelectedNotice(notice);
     setModalOpen(true);
   };
@@ -64,10 +64,10 @@ const NoticeAndDates: React.FC = () => {
       <div className="flex-1 bg-blue-50/90 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-10">
         <h2 className="text-3xl font-bold mb-6 text-blue-900">Important Dates</h2>
         <ul className="space-y-5">
-          {importantDates.map((item, idx) => (
+          {IMPORTANT_DATES.map((item, idx) => (
             <li key={idx} className="flex justify-between items-center border-b border-blue-100 pb-3 last:border-b-0">
               <span className="font-medium text-blue-800 text-base md:text-lg">{item.label}</span>
-              {'oldDate' in item ? (
+              {item.oldDate ? (
                 <div className="text-right ml-4">
                   <div className="text-gray-400 text-sm line-through">{item.oldDate}</div>
                   <div className="text-red-600 text-sm md:text-base font-semibold">{item.date}</div>
