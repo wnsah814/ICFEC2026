@@ -7,8 +7,6 @@ import CallForPapers from '@/components/CallForPapers';
 import AcceptedPapers from '@/components/AcceptedPapers';
 import SubmissionInstructions from '@/components/SubmissionInstructions';
 import Committees from '@/components/Committees';
-import Registration from '@/components/Registration';
-import Venue from '@/components/Venue';
 import Sponsors from '@/components/Sponsors';
 import Footer from '@/components/Footer';
 import { scrollToSection } from '@/utils/scrollToSection';
@@ -29,8 +27,6 @@ const SECTIONS_CONFIG = [
   { id: 'accepted-papers', label: 'ACCEPTED PAPERS', enabled: false },
   { id: 'submission-instructions', label: 'SUBMISSION INSTRUCTIONS', enabled: true },
   { id: 'committees', label: 'COMMITTEES', enabled: true },
-  { id: 'registration', label: 'REGISTRATION', enabled: false },
-  { id: 'venue', label: 'VENUE', enabled: false },
   { id: 'sponsors', label: 'SPONSORS', enabled: false },
 ];
 
@@ -54,8 +50,6 @@ const SECTION_COMPONENTS: Record<string, FC> = {
   'accepted-papers': AcceptedPapers,
   'submission-instructions': SubmissionInstructions,
   committees: Committees,
-  registration: Registration,
-  venue: Venue,
   sponsors: Sponsors,
 };
 
