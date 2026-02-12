@@ -15,13 +15,18 @@ import { scrollToSection } from '@/utils/scrollToSection';
 import Hero from '@/components/Hero';
 import NoticeAndDates from '@/components/NoticeAndDates';
 
-// 섹션 설정 - 여기서 한번에 제어
+const HEADER_SCROLL_THRESHOLD = 50;
+const SCROLL_TOP_BUTTON_THRESHOLD = 300;
+const ACTIVE_SECTION_OFFSET = 100;
+const ACTIVE_SECTION_TOP_BOUND = 120;
+const MD_BREAKPOINT = 768;
+
 const SECTIONS_CONFIG = [
   { id: 'home', label: 'HOME', enabled: true },
   { id: 'notice-dates', label: 'IMPORTANT DATES', enabled: true },
   { id: 'about', label: 'ABOUT', enabled: true },
   { id: 'call-for-papers', label: 'CALL FOR PAPERS', enabled: true },
-  { id: 'accepted-papers', label: 'ACCEPTED PAPERS', enabled: false }, // 비활성화
+  { id: 'accepted-papers', label: 'ACCEPTED PAPERS', enabled: false },
   { id: 'submission-instructions', label: 'SUBMISSION INSTRUCTIONS', enabled: true },
   { id: 'committees', label: 'COMMITTEES', enabled: true },
   { id: 'registration', label: 'REGISTRATION', enabled: false },
@@ -29,27 +34,16 @@ const SECTIONS_CONFIG = [
   { id: 'sponsors', label: 'SPONSORS', enabled: false },
 ];
 
-// 활성화된 섹션만 필터링
 const ENABLED_SECTIONS = SECTIONS_CONFIG.filter(section => section.enabled);
 
-// 배경색을 동적으로 계산하는 함수
 const getSectionClasses = (sectionId: string) => {
   const enabledSectionIds = ENABLED_SECTIONS.map(s => s.id);
   const index = enabledSectionIds.indexOf(sectionId);
-  
-  // home 섹션은 제외하고 계산 (Hero 컴포넌트가 별도 배경을 가짐)
   const actualIndex = index > 0 ? index - 1 : 0;
-  
-  // 기본 패딩 클래스
-  const basePadding = 'py-20 md:py-28';
-  
-  // sponsors 섹션은 다른 패딩 사용
-  if (sectionId === 'notice-dates') {
-    return `${basePadding.replace('py-20 md:py-28', 'py-16 md:py-20')} ${actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm'}`;
-  }
-  
-  // 홀수/짝수에 따라 배경색 번갈아가며 적용
-  return `${basePadding} ${actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm'}`;
+  const bgClass = actualIndex % 2 === 0 ? 'bg-white' : 'bg-blue-50/50 backdrop-blur-sm';
+  const padding = sectionId === 'notice-dates' ? 'py-16 md:py-20' : 'py-20 md:py-28';
+
+  return `${padding} ${bgClass}`;
 };
 
 // Section id to component mapping
@@ -74,10 +68,9 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
-      setShowScrollTop(scrollPosition > 300);
+      setIsScrolled(scrollPosition > HEADER_SCROLL_THRESHOLD);
+      setShowScrollTop(scrollPosition > SCROLL_TOP_BUTTON_THRESHOLD);
 
-      // 활성화된 섹션들만 체크
       const enabledSectionIds = ENABLED_SECTIONS.map(section => section.id);
       let closestSection = enabledSectionIds[0];
       let minDistance = Number.POSITIVE_INFINITY;
@@ -85,8 +78,8 @@ export default function Home() {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          const distance = Math.abs(rect.top - 100); // 100px 아래를 기준
-          if (rect.top <= 120 && distance < minDistance) {
+          const distance = Math.abs(rect.top - ACTIVE_SECTION_OFFSET);
+          if (rect.top <= ACTIVE_SECTION_TOP_BOUND && distance < minDistance) {
             minDistance = distance;
             closestSection = sectionId;
           }
@@ -103,8 +96,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleResize = () => {
-      // Close mobile menu when window width is greater than md breakpoint (768px)
-      if (window.innerWidth >= 768 && mobileMenuOpen) {
+      if (window.innerWidth >= MD_BREAKPOINT && mobileMenuOpen) {
         setMobileMenuOpen(false);
       }
     };
