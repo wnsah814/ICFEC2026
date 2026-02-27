@@ -15,7 +15,7 @@ export const COMMITTEE_GROUPS: CommitteeGroup[] = [
     members: [
       { name: 'Young Choon Lee', affiliation: 'Macquarie University, Australia' },
       { name: 'Flavia Delicato', affiliation: 'Fluminense Federal University, Brazil' },
-      { name: 'Stefan Schulte', affiliation: 'Hamburg University of Technology, Germany' },
+      { name: 'Stefan Schulte', affiliation: 'Technical University (TU) Berlin, Germany' },
     ],
   },
   {
