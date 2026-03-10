@@ -9,7 +9,7 @@ const SubmissionInstructions = () => {
         </p>
         
         <p className="text-gray-700 leading-relaxed">
-          Papers that are accepted for publication may be accepted as REGULAR papers (8 pages), SHORT papers (4 pages), or extended abstracts for POSTER (2 pages), depending on the reviewers&apos; recommendations. Accepted regular, short, and poster papers will be included in the conference proceedings that will be published through the IEEE Computer Society Conference Publishing Services.          
+          Papers that are accepted for publication may be accepted as REGULAR papers (8 pages), SHORT papers (4 pages), or extended abstracts for POSTER (2 pages), depending on the reviewers&apos; recommendations. Accepted regular, short, and poster papers will be included in the conference proceedings that will be published through the IEEE Computer Society Conference Publishing Services. When submitting the final accepted manuscript, authors may purchase up to two additional pages.
         </p>
       </div>
     </div>
