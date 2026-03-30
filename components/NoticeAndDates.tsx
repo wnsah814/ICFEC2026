@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import { IMPORTANT_DATES } from '@/constants/dates';
 import { NOTICES, type Notice } from '@/data/notices';
 
+const renderContent = (notice: Notice) => {
+  if (!notice.link) return notice.content;
+  const parts = notice.content.split('{link}');
+  return (
+    <>
+      {parts[0]}
+      <a href={notice.link.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">
+        {notice.link.text}
+      </a>
+      {parts[1]}
+    </>
+  );
+};
+
 const NoticeAndDates: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
@@ -32,7 +46,7 @@ const NoticeAndDates: React.FC = () => {
                 <span className="font-semibold text-blue-800">{notice.title}</span>
                 <span className="text-xs text-gray-400">{notice.date}</span>
               </div>
-              <div className="text-gray-600 text-sm line-clamp-1">{notice.content}</div>
+              <div className="text-gray-600 text-sm line-clamp-1">{renderContent(notice)}</div>
             </li>
           ))}
         </ul>
@@ -71,7 +85,7 @@ const NoticeAndDates: React.FC = () => {
             </button>
             <div className="text-base text-gray-500 mb-3">{selectedNotice.date}</div>
             <div className="font-bold text-blue-900 text-3xl mb-5">{selectedNotice.title}</div>
-            <div className="text-gray-800 text-lg whitespace-pre-line">{selectedNotice.content}</div>
+            <div className="text-gray-800 text-lg whitespace-pre-line">{renderContent(selectedNotice)}</div>
           </div>
         </div>
       )}
