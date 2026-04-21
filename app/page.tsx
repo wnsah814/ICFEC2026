@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 import { scrollToSection } from '@/utils/scrollToSection';
 import Hero from '@/components/Hero';
 import NoticeAndDates from '@/components/NoticeAndDates';
+import Attendees from '@/components/Attendees';
 
 const HEADER_SCROLL_THRESHOLD = 50;
 const SCROLL_TOP_BUTTON_THRESHOLD = 300;
@@ -21,6 +22,7 @@ const MD_BREAKPOINT = 768;
 
 const SECTIONS_CONFIG = [
   { id: 'home', label: 'HOME', enabled: true },
+  { id: 'attendees', label: 'ATTENDEES', enabled: true },
   { id: 'notice-dates', label: 'IMPORTANT DATES', enabled: true },
   { id: 'about', label: 'ABOUT', enabled: true },
   { id: 'call-for-papers', label: 'CALL FOR PAPERS', enabled: true },
@@ -44,6 +46,7 @@ const getSectionClasses = (sectionId: string) => {
 
 // Section id to component mapping
 const SECTION_COMPONENTS: Record<string, FC> = {
+  attendees: Attendees,
   'notice-dates': NoticeAndDates,
   about: About,
   'call-for-papers': CallForPapers,
