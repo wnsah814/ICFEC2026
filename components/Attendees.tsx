@@ -26,17 +26,23 @@ const SessionBlock = ({ session }: { session: ProgramSession }) => (
         </span>
       </div>
       <h4 className="mt-3 text-lg font-semibold leading-snug text-blue-950">{session.title}</h4>
-      <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm">
-        <span className="inline-flex items-center gap-1.5">
-          <User className="h-3.5 w-3.5 text-blue-500" />
-          <span className="text-gray-500">Chair</span>
-          <span className="font-medium text-blue-900">{session.chair}</span>
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <MapPin className="h-3.5 w-3.5 text-blue-500" />
-          <span className="font-medium text-blue-900">{session.room}</span>
-        </span>
-      </div>
+      {(session.chair || session.room) && (
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm">
+          {session.chair && (
+            <span className="inline-flex items-center gap-1.5">
+              <User className="h-3.5 w-3.5 text-blue-500" />
+              <span className="text-gray-500">Chair</span>
+              <span className="font-medium text-blue-900">{session.chair}</span>
+            </span>
+          )}
+          {session.room && (
+            <span className="inline-flex items-center gap-1.5">
+              <MapPin className="h-3.5 w-3.5 text-blue-500" />
+              <span className="font-medium text-blue-900">{session.room}</span>
+            </span>
+          )}
+        </div>
+      )}
     </header>
     <div className="overflow-x-auto">
       <table className="w-full table-fixed text-left text-sm">

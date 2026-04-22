@@ -6,8 +6,8 @@ export interface ProgramPaper {
 export interface ProgramSession {
   code: string;
   title: string;
-  chair: string;
-  room: string;
+  chair?: string;
+  room?: string;
   day: 'Tuesday, 19 May 2026' | 'Wednesday, 20 May 2026' | 'Thursday, 21 May 2026';
   time: string;
   papers: ProgramPaper[];
@@ -44,8 +44,6 @@ export const PROGRAM_SESSIONS: ProgramSession[] = [
   {
     code: 'Posters',
     title: 'Poster Session',
-    chair: '—',
-    room: 'Conference Room 4',
     day: 'Tuesday, 19 May 2026',
     time: '14:00 – 15:30',
     papers: [
