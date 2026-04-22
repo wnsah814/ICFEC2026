@@ -7,7 +7,8 @@ export interface ProgramSession {
   code: string;
   title: string;
   chair: string;
-  day: 'Wednesday, 20 May 2026' | 'Thursday, 21 May 2026';
+  room: string;
+  day: 'Tuesday, 19 May 2026' | 'Wednesday, 20 May 2026' | 'Thursday, 21 May 2026';
   time: string;
   papers: ProgramPaper[];
 }
@@ -41,9 +42,33 @@ export const ATTENDEE_LINKS: AttendeeLink[] = [
 
 export const PROGRAM_SESSIONS: ProgramSession[] = [
   {
+    code: 'Posters',
+    title: 'Poster Session',
+    chair: '—',
+    room: 'Conference Room 4',
+    day: 'Tuesday, 19 May 2026',
+    time: '14:00 – 15:30',
+    papers: [
+      {
+        title: 'Lifetime-Aware Zone Allocation for ZNS SSDs',
+        authors: 'Jinyoung Kim, Doeun Kim, Junmo Seong, Hyuck Han, Sooyong Kang',
+      },
+      {
+        title:
+          'Attention-based Decomposition Framework for Joint Task Offloading and Resource Allocation in Multi-Task Multi-Server MEC',
+        authors: 'Tran-Dang Hoa, Dong-Seong Kim',
+      },
+      {
+        title: 'Practical Monitoring Tool for ZNS SSD Emulator',
+        authors: 'Junmo Seong, Doeun Kim, Hyuck Han, Sooyong Kang',
+      },
+    ],
+  },
+  {
     code: 'ICFEC 1',
     title: 'Monitoring and Management in the Computing Continuum',
     chair: 'Yu Xiao (Aalto University)',
+    room: 'Conference Room 4',
     day: 'Wednesday, 20 May 2026',
     time: '14:00 – 15:30',
     papers: [
@@ -66,6 +91,7 @@ export const PROGRAM_SESSIONS: ProgramSession[] = [
     code: 'ICFEC 2',
     title: 'Efficient On-Device Learning and Model Compression',
     chair: 'Stefan Schulte (TU Berlin)',
+    room: 'Conference Room 4',
     day: 'Wednesday, 20 May 2026',
     time: '16:00 – 17:30',
     papers: [
@@ -90,6 +116,7 @@ export const PROGRAM_SESSIONS: ProgramSession[] = [
     code: 'ICFEC 3',
     title: 'Intelligent Infrastructure and Multi-Tier Orchestration',
     chair: 'TBC',
+    room: 'Conference Room 4',
     day: 'Thursday, 21 May 2026',
     time: '11:00 – 12:30',
     papers: [
@@ -113,6 +140,7 @@ export const PROGRAM_SESSIONS: ProgramSession[] = [
     code: 'ICFEC 4',
     title: 'Security and Coordination in Federated Learning',
     chair: 'Young Choon Lee (Macquarie University)',
+    room: 'Conference Room 4',
     day: 'Thursday, 21 May 2026',
     time: '14:00 – 15:30',
     papers: [
@@ -129,6 +157,7 @@ export const PROGRAM_SESSIONS: ProgramSession[] = [
 ];
 
 export const PROGRAM_DAYS = [
+  'Tuesday, 19 May 2026',
   'Wednesday, 20 May 2026',
   'Thursday, 21 May 2026',
 ] as const;

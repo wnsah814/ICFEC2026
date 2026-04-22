@@ -1,4 +1,4 @@
-import { ArrowUpRight, Calendar, MapPin, Ticket, Plane } from 'lucide-react';
+import { ArrowUpRight, Calendar, Clock, MapPin, Ticket, Plane, User } from 'lucide-react';
 import {
   ATTENDEE_LINKS,
   FULL_PROGRAM_URL,
@@ -14,34 +14,47 @@ const LINK_ICONS: Record<string, React.ComponentType<{ className?: string }>> = 
 };
 
 const SessionBlock = ({ session }: { session: ProgramSession }) => (
-  <article className="overflow-hidden rounded-xl border border-blue-100 bg-white shadow-sm">
-    <header className="flex flex-col gap-1 border-b border-blue-100 bg-blue-800 px-5 py-4 text-white sm:flex-row sm:items-center sm:justify-between">
-      <div>
-        <div className="flex items-center gap-3">
-          <span className="rounded bg-white/15 px-2 py-0.5 text-xs font-semibold tracking-wide">
-            {session.code}
-          </span>
-          <span className="text-sm opacity-90">{session.time}</span>
-        </div>
-        <h4 className="mt-1 text-lg font-semibold">{session.title}</h4>
+  <article className="overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm transition hover:shadow-md">
+    <header className="border-b border-blue-100 bg-gradient-to-br from-blue-50 via-white to-indigo-50/60 px-6 py-5">
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
+          {session.code}
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-medium text-blue-700 ring-1 ring-blue-200/70">
+          <Clock className="h-3 w-3" />
+          {session.time}
+        </span>
       </div>
-      <p className="text-sm text-blue-100">Chair: {session.chair}</p>
+      <h4 className="mt-3 text-lg font-semibold leading-snug text-blue-950">{session.title}</h4>
+      <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm">
+        <span className="inline-flex items-center gap-1.5">
+          <User className="h-3.5 w-3.5 text-blue-500" />
+          <span className="text-gray-500">Chair</span>
+          <span className="font-medium text-blue-900">{session.chair}</span>
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <MapPin className="h-3.5 w-3.5 text-blue-500" />
+          <span className="font-medium text-blue-900">{session.room}</span>
+        </span>
+      </div>
     </header>
     <div className="overflow-x-auto">
-      <table className="w-full text-left text-sm">
-        <thead className="bg-blue-50 text-blue-900">
-          <tr>
-            <th scope="col" className="w-12 px-4 py-3 font-semibold">#</th>
-            <th scope="col" className="px-4 py-3 font-semibold">Paper</th>
-            <th scope="col" className="px-4 py-3 font-semibold">Authors</th>
+      <table className="w-full table-fixed text-left text-sm">
+        <thead>
+          <tr className="border-b border-blue-100 bg-slate-50/60">
+            <th scope="col" className="w-1/2 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-blue-900">
+              Paper
+            </th>
+            <th scope="col" className="w-1/2 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-blue-900">
+              Authors
+            </th>
           </tr>
         </thead>
         <tbody className="divide-y divide-blue-50">
-          {session.papers.map((paper, idx) => (
-            <tr key={paper.title} className="align-top hover:bg-blue-50/40">
-              <td className="px-4 py-3 text-gray-500">{idx + 1}</td>
-              <td className="px-4 py-3 font-medium text-gray-900">{paper.title}</td>
-              <td className="px-4 py-3 text-gray-600 italic">{paper.authors}</td>
+          {session.papers.map((paper) => (
+            <tr key={paper.title} className="align-top transition hover:bg-blue-50/50">
+              <td className="px-6 py-4 font-medium text-gray-900">{paper.title}</td>
+              <td className="px-6 py-4 italic text-gray-600">{paper.authors}</td>
             </tr>
           ))}
         </tbody>
@@ -95,7 +108,7 @@ const Attendees = () => {
             <h3 className="text-2xl font-semibold text-blue-900">Technical Program</h3>
             <p className="mt-1 flex items-center gap-2 text-sm text-gray-600">
               <Calendar className="h-4 w-4" />
-              <span>20 – 21 May 2026 · Parramatta, Sydney</span>
+              <span>19 – 21 May 2026 · Parramatta, Sydney</span>
             </p>
           </div>
           <a
