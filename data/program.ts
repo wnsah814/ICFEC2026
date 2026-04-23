@@ -113,7 +113,7 @@ export const PROGRAM_SESSIONS: ProgramSession[] = [
   {
     code: 'ICFEC 3',
     title: 'Intelligent Infrastructure and Multi-Tier Orchestration',
-    chair: 'TBC',
+    chair: 'Kanaka Sai Jagarlamudi (Western Sydney University)',
     room: 'Conference Room 4',
     day: 'Thursday, 21 May 2026',
     time: '11:00 – 12:30',
