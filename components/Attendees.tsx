@@ -49,7 +49,7 @@ const SessionBlock = ({ session }: { session: ProgramSession }) => (
         <thead>
           <tr className="border-b border-blue-100 bg-slate-50/60">
             <th scope="col" className="w-1/2 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-blue-900">
-              Paper
+              Title
             </th>
             <th scope="col" className="w-1/2 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-blue-900">
               Authors
