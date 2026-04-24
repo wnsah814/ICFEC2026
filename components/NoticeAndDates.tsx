@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { IMPORTANT_DATES } from '@/constants/dates';
 import { NOTICES, type Notice } from '@/data/notices';
 
@@ -19,6 +20,11 @@ const renderContent = (notice: Notice) => {
 const NoticeAndDates: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const openModal = (notice: Notice) => {
     setSelectedNotice(notice);
@@ -72,9 +78,9 @@ const NoticeAndDates: React.FC = () => {
       </div>
 
       {/* Modal for notice details */}
-      {modalOpen && selectedNotice && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl p-10 max-w-2xl w-full mx-4 relative animate-fade-in">
+      {mounted && modalOpen && selectedNotice && createPortal(
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm" onClick={closeModal}>
+          <div className="bg-white rounded-2xl shadow-2xl p-10 max-w-2xl w-full mx-4 relative animate-fade-in" onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
               className="absolute top-4 right-4 text-gray-400 hover:text-blue-600 text-3xl font-bold"
@@ -87,7 +93,8 @@ const NoticeAndDates: React.FC = () => {
             <div className="font-bold text-blue-900 text-3xl mb-5">{selectedNotice.title}</div>
             <div className="text-gray-800 text-lg whitespace-pre-line">{renderContent(selectedNotice)}</div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
